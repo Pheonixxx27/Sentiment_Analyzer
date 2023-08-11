@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sentiment Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .input-form {
+            text-align: center;
+        }
+        .result {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .result-score {
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sentiment Analysis</h1>
+        <div class="input-form">
+            <form action="/" method="post">
+                <input type="text" name="input_word" placeholder="Enter a word">
+                <input type="submit" value="Analyze">
+            </form>
+        </div>
+        {% if input_word and sentiment_score is not none %}
+        <div class="result">
+            <p>Word: {{ input_word }}</p>
+            <p class="result-score">Sentiment Score: {{ sentiment_score }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
